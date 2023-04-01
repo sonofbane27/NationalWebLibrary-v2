@@ -2,57 +2,35 @@
 <html> 
   <head>
     <title>National Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
     <style>
-      h1{
-        font-size: 40px;
-        font-family: Bahnschrift;
-        font-weight: normal;  
-        color: rgb(50, 50, 50);
-        text-align: center;
-      }     
-
       #banner{
-        width:100%;
         height: 300px;
+        width:  100%;
         object-fit: cover;
-      }
-
-      input{
-        font-family: Bahnschrift;
-        font-size: 20px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-      
-      button{
-        font-family: Bahnschrift;
-        font-size: 20px;
-        color: rgb(100, 100, 100);
-        text-align: center;
-        font-weight: normal;
-      }
-
-      #container{
-        max-width: 720px;
-        text-align: center;
-        margin: 0 auto 0 auto;
       }
       
     </style>
+    
   </head>
   <body>
-    <h1>Welcome to the National Library!</h1>
+    <div class="text-center" class="container">
+    <h1 class="text-center mt-2 mb-4">National Library</h1>
 
-    <img id ="banner" src="https://nationalweblibrary.haythammuhamad.repl.co/static/Banner.jpg"><br><br>
+    <img class="img-fluid" id="banner" src="https://nationalweblibrary.haythammuhamad.repl.co/static/Banner.jpg"><br><br>
 
-    <div id="container">
-    <input type="text">
-    <input type="submit" value="Search For Item"><br><br>      
-    <button>Login/Register</button><br><br>
-    <button>My Account</button><br><br>      
-    <button>Request to Purchase Unavailable Item</button>
-    </div><br><br>
+    <input class="form-control" placeholder="Enter title, author or keywords" type="text"><br>
+    <input onclick="window.location.href='https://nationalweblibrary.haythammuhamad.repl.co/results'" type="submit" class="btn btn-primary" value="Search For Item"><br><br>
+      
+    <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-secondary">Login/Register</button>
+    <button class="btn btn-secondary">My Account</button>   
+    <button class="btn btn-secondary">Request to Purchase Unavailable Item</button>
+    </div>
+    </div>
     
   </body>
 
