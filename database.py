@@ -9,7 +9,7 @@ engine = create_engine(db_connection_string,
         }
     })
 
-def load_books_from_db:
+def load_books_from_db():
 with engine.connect() as conn:
   result = conn.execute(text("select * from books"))
   books  = []

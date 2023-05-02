@@ -16,7 +16,9 @@
     </h3>
   
     <div>
-      <b>Author: </b> {{books['author']}}    
+      {% for book in books %}
+      {% include 'bookitem.html' %}
+      {% endfor %}   
     </div>
   </div>
 
