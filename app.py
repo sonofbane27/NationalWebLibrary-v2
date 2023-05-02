@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from database import engine
+from sqlalchemy import text
 
 app = Flask(__name__)
 
@@ -25,14 +27,24 @@ BOOKS = [
 }  
 ]
 
+def load_books_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from books"))
+    books = []
+    result_dicts = []
+    for row in result.all():
+      result_dicts.append(dict(row))
+      return books
+    
 
 @app.route("/")
 def hello_world():
   return render_template('home.html')
 
-@app.route("/results")
+@app.route("/api/results")
 def search_results():
-  return render_template('search.html', books=BOOKS)
+  books = load_books_from_db()
+  return jsonify(books)
 
 
 if __name__ == '__main__':
